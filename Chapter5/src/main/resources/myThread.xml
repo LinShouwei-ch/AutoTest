@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--parallel是线程级别，thread-count线程数是2-->
+<!--
+    tests级别：不同的test tag下的用例可以在不同的线程下执行
+             相同test tag下的用例只能在同一个线程中去执行
+    classs级别：不同的class tag下的用例可以在不同的线程下执行
+              相同的class tag下的用例只能在同一个线程中去执行
+    methods级别：所有用例都可以在不同的线程下去执行
+    thread-count：代表了最大并发线程数
+    xml文件配置这种方式不能指定线程池，只有方法才可以指定线程池
+-->
+<suite name="thread" parallel="tests" thread-count="2">
+    <test name="demo01">
+        <classes>
+            <class name="com.course.testng.thread.ThreadOnXml"/>
+        </classes>
+    </test>
+    <test name="demo02">
+        <classes>
+            <class name="com.course.testng.thread.ThreadOnXml"/>
+        </classes>
+    </test>
+</suite>
